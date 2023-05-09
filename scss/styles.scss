@@ -30,10 +30,10 @@ $enable-shadows: true;
 $offcanvas-box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
 
 // Customize some defaults
-$body-color: #333;
-$body-bg: #fff;
+$body-color: #fff;
+$body-bg: #333;
 $border-radius: 0.4rem;
-$success: #7952b3;
+$success: orange;
 
 // Required
 @import "bootstrap/scss/functions";
@@ -84,28 +84,49 @@ $success: #7952b3;
 // Custom styles
 //
 
-@import "icon-list";
+@import "gallery";
 
 html,
-body {
-  background-color: $body-color;
-  color: $body-bg;
+body,
+.body {
+  background-color: $body-bg;
+  color: $body-color;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
-body {
+.body {
   padding: 1.5rem;
 }
 
-.logo {
-  width: 75px;
-  margin-right: 10px;
+header {
+  --bs-border-color: orange;
+
+  .logo {
+    width: 75px;
+    margin-right: 10px;
+  }
+
+  .links {
+    display: flex;
+    gap: 1rem;
+
+    a {
+      color: white;
+    }
+  }
 }
 
-.links {
-  display: flex;
-  gap: 1rem;
+footer {
+  margin-top: auto;
+  // margin-bottom: 15px;
 
-  a {
-    color: white;
+  hr {
+    color: orange;
+    opacity: 1;
   }
 }
